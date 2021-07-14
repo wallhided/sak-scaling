@@ -15,11 +15,6 @@ variable "hpa_conf" {
   description = "A set of parameters to pass to Horizontal Pod Autoscaler Helm chart (see: https://github.com/banzaicloud/hpa-operator)"
 }
 
-variable "metrics_conf" {
-  default     = {}
-  description = "A set of parameters to pass to Horizontal Pod Autoscaler Helm chart (see: https://github.com/banzaicloud/hpa-operator)"
-}
-
 variable "namespace" {
   type        = string
   default     = "kube-system"
@@ -54,13 +49,8 @@ variable "cluster_autoscaler_chart_version" {
 }
 
 variable "hpa_chart_version" {
-  default     = "0.2.4"
+  default     = "0.4.0"
   description = "Version of Horizontal Pod Autoscaler chart"
-}
-
-variable "metrics_chart_version" {
-  default     = "5.9.0"
-  description = "Version of Metrics server chart"
 }
 
 variable "argocd" {
