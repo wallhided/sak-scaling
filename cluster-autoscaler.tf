@@ -142,8 +142,8 @@ locals {
     "rbac.serviceAccountAnnotations.eks\\.amazonaws\\.com/role-arn" = module.iam_assumable_role_admin.this_iam_role_arn
     "rbac.pspEnabled"                                               = true,
     "resources.limits.cpu"                                          = "100m",
-    "resources.limits.memory"                                       = "300Mi",
+    "resources.limits.memory"                                       = "500Mi",
     "resources.requests.cpu"                                        = "100m",
-    "resources.requests.memory"                                     = "300Mi",
+    "resources.requests.memory"                                     = "500Mi",
   }
 }
