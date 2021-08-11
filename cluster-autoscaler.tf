@@ -132,7 +132,7 @@ locals {
   cluster_autoscaler_conf_defaults = {
     "cloudProvider"                                                 = "aws"
     "image.repository"                                              = "us.gcr.io/k8s-artifacts-prod/autoscaling/cluster-autoscaler"
-    "image.tag"                                                     = "v1.19.1" # Make sure it matches the version of the cluster
+    "image.tag"                                                     = "v${var.cluster_version}.1" # Make sure it matches the version of the cluster
     "autoDiscovery.clusterName"                                     = var.cluster_name,
     "autoDiscovery.enabled"                                         = true
     "awsRegion"                                                     = data.aws_region.current.name,

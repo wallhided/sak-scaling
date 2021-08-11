@@ -33,6 +33,12 @@ variable "cluster_name" {
   description = "A name of the Amazon EKS cluster"
 }
 
+variable "cluster_version" {
+  type        = string
+  description = "EKS cluster version"
+  default     = "1.19"
+}
+
 variable "hpa_enabled" {
   default     = true
   description = "Whether to deploy Horizontal Pod Autoscaler chart"
