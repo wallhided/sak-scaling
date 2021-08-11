@@ -44,7 +44,7 @@ variable "cluster_autoscaler_enabled" {
 }
 
 variable "cluster_autoscaler_chart_version" {
-  default     = "7.2.2"
+  default     = "9.10.3"
   description = "Version of Cluster Autoscaler chart"
 }
 

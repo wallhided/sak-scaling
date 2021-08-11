@@ -29,10 +29,6 @@ locals {
   hpa_chart_repository = "https://kubernetes-charts.banzaicloud.com"
   hpa_name             = "hpa-operator"
   hpa_chart            = "hpa-operator"
-  metrics_chart_repository = "https://charts.bitnami.com/bitnami"
-  metrics_name             = "metrics-server"
-  metrics_chart            = "metrics-server"
-
   hpa_app = {
     "apiVersion" = "argoproj.io/v1alpha1"
     "kind"       = "Application"
