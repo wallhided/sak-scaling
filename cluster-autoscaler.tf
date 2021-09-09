@@ -90,7 +90,7 @@ resource "local_file" "cluster_autoscaler" {
 }
 
 locals {
-  cluster_autoscaler_chart_repository = "https://charts.helm.sh/stable"
+  cluster_autoscaler_chart_repository = "https://kubernetes.github.io/autoscaler"
   cluster_autoscaler_name             = "aws-cluster-autoscaler"
   cluster_autoscaler_chart            = "cluster-autoscaler"
   cluster_autoscaler_app = {
