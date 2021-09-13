@@ -130,20 +130,20 @@ locals {
   }
   cluster_autoscaler_conf = merge(local.cluster_autoscaler_conf_defaults, var.cluster_autoscaler_conf)
   cluster_autoscaler_conf_defaults = {
-    "cloudProvider"                                                 = "aws"
-    "image.repository"                                              = "us.gcr.io/k8s-artifacts-prod/autoscaling/cluster-autoscaler"
-    "image.tag"                                                     = "v${var.cluster_version}.1" # Make sure it matches the version of the cluster
-    "autoDiscovery.clusterName"                                     = var.cluster_name,
-    "autoDiscovery.enabled"                                         = true
-    "awsRegion"                                                     = data.aws_region.current.name,
-    "extraArgs.balance-similar-node-groups"                         = true,
-    "extraArgs.scale-down-enabled"                                  = true,
-    "rbac.create"                                                   = true,
+    "cloudProvider"                                                  = "aws"
+    "image.repository"                                               = "us.gcr.io/k8s-artifacts-prod/autoscaling/cluster-autoscaler"
+    "image.tag"                                                      = "v${var.cluster_version}.1" # Make sure it matches the version of the cluster
+    "autoDiscovery.clusterName"                                      = var.cluster_name,
+    "autoDiscovery.enabled"                                          = true
+    "awsRegion"                                                      = data.aws_region.current.name,
+    "extraArgs.balance-similar-node-groups"                          = true,
+    "extraArgs.scale-down-enabled"                                   = true,
+    "rbac.create"                                                    = true,
     "rbac.serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn" = module.iam_assumable_role_admin.this_iam_role_arn
-    "rbac.pspEnabled"                                               = true,
-    "resources.limits.cpu"                                          = "200m",
-    "resources.limits.memory"                                       = "500Mi",
-    "resources.requests.cpu"                                        = "100m",
-    "resources.requests.memory"                                     = "500Mi",
+    "rbac.pspEnabled"                                                = true,
+    "resources.limits.cpu"                                           = "200m",
+    "resources.limits.memory"                                        = "500Mi",
+    "resources.requests.cpu"                                         = "100m",
+    "resources.requests.memory"                                      = "500Mi",
   }
 }

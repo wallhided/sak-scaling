@@ -6,11 +6,13 @@ variable "module_depends_on" {
 }
 
 variable "cluster_autoscaler_conf" {
+  type        = map(any)
   default     = {}
   description = "A set of parameters to pass to Cluster Autoscaler Helm chart (see: https://github.com/kubernetes/autoscaler)"
 }
 
 variable "hpa_conf" {
+  type        = map(any)
   default     = {}
   description = "A set of parameters to pass to Horizontal Pod Autoscaler Helm chart (see: https://github.com/banzaicloud/hpa-operator)"
 }
@@ -40,21 +42,25 @@ variable "cluster_version" {
 }
 
 variable "hpa_enabled" {
+  type        = bool
   default     = true
   description = "Whether to deploy Horizontal Pod Autoscaler chart"
 }
 
 variable "cluster_autoscaler_enabled" {
+  type        = bool
   default     = true
   description = "Whether to deploy Cluster Autoscaler chart"
 }
 
 variable "cluster_autoscaler_chart_version" {
+  type        = string
   default     = "9.10.3"
   description = "Version of Cluster Autoscaler chart"
 }
 
 variable "hpa_chart_version" {
+  type        = string
   default     = "0.4.0"
   description = "Version of Horizontal Pod Autoscaler chart"
 }
