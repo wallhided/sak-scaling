@@ -9,6 +9,7 @@ env:
   TERRAFORM_VERSION: "1.0.6"
 
 jobs:
+
   tflint:
     name: runner / tflint
     runs-on: ubuntu-latest
@@ -39,6 +40,6 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review # Optional. Change reporter
           fail_on_error: "true" # Optional. Fail action if errors are found
-          filter_mode: "added" # Optional. Check all files, not just the diff
-          level: "warning"
-          flags: "--module --loglevel=error" # Optional. Add custom tflint flags
+          filter_mode: "nofilter" # Optional. Check all files, not just the diff
+          level: info
+          flags: "--module" # Optional. Add custom tflint flags
