@@ -6,13 +6,13 @@ on:
 
 jobs:
   pr_title_naming:
-    name: runner / tflint
+    name: PR title rules
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: deepakputhraya/action-pr-title@master
       with:
-        regex: '([a-z])+\/([a-z])+' # Regex the title should match.
+        regex: '([a-z])+:([a-z])+' # Regex the title should match.
         allowed_prefixes: 'feature,fix,issue' # title should start with the given prefix
         disallowed_prefixes: 'feat/,hotfix' # title should not start with the given prefix
         prefix_case_sensitive: false # title prefix are case insensitive
