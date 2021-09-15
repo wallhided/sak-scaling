@@ -13,9 +13,9 @@ jobs:
     - uses: deepakputhraya/action-pr-title@master
       with:
         regex: '([a-z])+:+' # Regex the title should match.
-        allowed_prefixes: 'feature,fix,issue' # title should start with the given prefix
+        allowed_prefixes: 'feature,fix,issue,bug' # title should start with the given prefix
         disallowed_prefixes: 'feat/,hotfix' # title should not start with the given prefix
         prefix_case_sensitive: false # title prefix are case insensitive
         min_length: 5 # Min length of the title
         max_length: 50 # Max length of the title
-        github_token: ${{ github.token }} # Default: ${{ github.token }}
+        github_token: ${{ secrets.github_token }} # Default: ${{ github.token }}
